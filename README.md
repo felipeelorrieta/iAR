@@ -22,6 +22,18 @@ Instalation
 
 ======================
 
-::
-
+```
 Numpy
+```
+
+Install from PyPI using:
+
+```
+pip install iar
+```
+
+or clone this github and do:
+
+```
+python setup.py install --user
+```
