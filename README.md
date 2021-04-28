@@ -19,8 +19,7 @@ Contents
 -   Bivariate Irregular Autoregressive (BIAR) Model
 
 Instalation
-
-======================
+=====================
 
 Dependencies:
 
@@ -41,11 +40,9 @@ python setup.py install --user
 ```
 
 Examples
-
 ======================
 
 Authors
-
 ======================
 
 -   Felipe Elorrieta (Millennium Institute of Astrophysics and Universidad de Santiago de Chile)
@@ -54,11 +51,9 @@ Authors
 -   Wilfredo Palma (Millennium Institute of Astrophysics)
 
 Acknowledgments
-
 ======================
 
 References
-
 ======================
 
 1. Eyheramendy S, Elorrieta F, Palma W (2018). “An irregular discrete time series model to identify residuals with autocorrelation in astronomical light curves.” Monthly Notices of the Royal
