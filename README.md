@@ -22,6 +22,8 @@ Instalation
 
 ======================
 
+Dependencies:
+
 ```
 Numpy
 ```
@@ -37,3 +39,28 @@ or clone this github and do:
 ```
 python setup.py install --user
 ```
+
+Examples
+
+======================
+
+Authors
+
+======================
+
+-   Felipe Elorrieta (Millennium Institute of Astrophysics and Universidad de Santiago de Chile)
+-   Cesar Ojeda (Universidad del Valle - Colombia)
+-   Susana Eyheramendy (Millennium Institute of Astrophysics and Universidad Adolfo Ibañez)
+-   Wilfredo Palma (Millennium Institute of Astrophysics)
+
+Acknowledgments
+
+======================
+
+References
+
+======================
+
+1. Eyheramendy S, Elorrieta F, Palma W (2018). “An irregular discrete time series model to identify residuals with autocorrelation in astronomical light curves.” Monthly Notices of the Royal
+Astronomical Society, 481(4), 4311–4322. ISSN 0035-8711, doi: 10.1093/mnras/sty2487, https:
+//academic.oup.com/mnras/article-pdf/481/4/4311/25906473/sty2487.pdf.
