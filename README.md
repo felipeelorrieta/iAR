@@ -14,7 +14,7 @@ model.
 Contents
 ========
 
--   Irregular Autoregressive (IAR) Model
+-   Irregular Autoregressive (IAR) Model [[1]](#1)
 -   Complex Irregular Autoregressive (CIAR) Model
 -   Bivariate Irregular Autoregressive (BIAR) Model
 
@@ -45,7 +45,7 @@ Examples
 Authors
 ======================
 
--   Felipe Elorrieta (mailto:felipe.elorrieta@usach.cl) (Millennium Institute of Astrophysics and Universidad de Santiago de Chile)
+-   Felipe Elorrieta (felipe.elorrieta@usach.cl) (Millennium Institute of Astrophysics and Universidad de Santiago de Chile)
 -   Cesar Ojeda (Universidad del Valle - Colombia)
 -   Susana Eyheramendy (Millennium Institute of Astrophysics and Universidad Adolfo Ibañez)
 -   Wilfredo Palma (Millennium Institute of Astrophysics)
@@ -53,9 +53,12 @@ Authors
 Acknowledgments
 ======================
 
-The authors acknowledge support from the ANID – Millennium Science Initiative Program – ICN12_009 awarded to the Millennium Institute of Astrophysics MAS ((www.astrofisicamas.cl)) 
+The authors acknowledge support from the ANID – Millennium Science Initiative Program – ICN12_009 awarded to the Millennium Institute of Astrophysics MAS (www.astrofisicamas.cl) 
 
 References
 ======================
 
-{% bibliography %}
+<a id="1">[1]</a> 
+Dijkstra, E. W. (1968). 
+Go to statement considered harmful. 
+Communications of the ACM, 11(3), 147-148.
