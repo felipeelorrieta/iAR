@@ -88,4 +88,105 @@ def IAR_kalman(y,sT,delta=0,zero_mean=True,standarized=True):
     out=minimize_scalar(IAR_phi_kalman,args=(y,delta,sT,zero_mean,standarized),bounds=(0,1),method="bounded",tol=0.0001220703)
     return out.x
 
+def IARg_sample(phi,n,sT,sigma2,mu):
+    d=np.diff(sT)
+    y=np.zeros(n)
+    y[0]=np.random.gamma(shape=1, scale=1, size=1)
+    shape=np.zeros(n)
+    scale=np.zeros(n)
+    yhat=np.zeros(n)
+    for i in range(n-1):
+        phid=phi**(d[i])
+        yhat[i+1]=mu+phid * y[i]
+        gL = sigma2*(1-phid**(2))
+        shape[i+1]=yhat[i+1]**2/gL
+        scale[i+1]=(gL/yhat[i+1])
+        y[i+1]=np.random.gamma(shape=shape[i+1], scale=scale[i+1], size=1)
+    return y, sT
 
+def IAR_phi_gamma(x,y,sT):
+    mu=x[1]
+    sigma=x[2]
+    x=x[0]
+    d=np.diff(sT)
+    n=len(y)
+    phi=x**d
+    yhat=mu+phi*y[0:(n-1)]
+    gL=sigma*(1-phi**2)
+    beta=gL/yhat
+    alpha=yhat**2/gL
+    s1=np.sum(-alpha*np.log(beta) - scipy.special.gammaln(alpha) - y[1:n]/beta + (alpha-1) * np.log(y[1:n])) - y[0]
+    s1=-s1
+    return s1
+
+def IAR_gamma(y,sT):
+    aux=1e10
+    value=1e10
+    br=0
+    for i in range(20):
+        phi=np.random.uniform(0,1,1).mean()
+        mu=np.mean(y)*np.random.uniform(0,1,1).mean()
+        sigma=np.var(y)*np.random.uniform(0,1,1).mean()
+        bnds = ((0, 0.9999), (0.0001, np.mean(y)),(0.0001, np.var(y)))
+        out=minimize(IAR_phi_gamma,np.array([phi, mu, sigma]),args=(y,sT),bounds=bnds,method='L-BFGS-B')
+        value=out.fun
+        if aux > value:
+            par=out.x
+            aux=value
+            br=br+1
+        if aux <= value and br>5 and i>10:
+            break
+        #print br
+    if aux == 1e10:
+       par=np.zeros(3)
+    return par[0],par[1],par[2],aux
+
+def IARt_sample(phi,n,sT,sigma2,nu):
+    d=np.diff(sT)
+    y=np.zeros(n)
+    y[0]=np.random.normal(loc=0, scale=1, size=1)
+    yhat=np.zeros(n)
+    for i in range(n-1):
+        phid=phi**(d[i])
+        yhat[i+1]=phid * y[i]
+        gL = sigma2*(1-phid**(2))
+        y[i+1]=np.random.standard_t(df=nu,size=1)*np.sqrt(gL*(nu-2)/nu)+yhat[i+1]
+    return y, sT
+
+def IAR_phi_t(x,y,sT,nu):
+    sigma=x[1]
+    x=x[0]
+    d=np.diff(sT)
+    n=len(y)
+    phi=x**d
+    yhat=phi*y[0:(n-1)]
+    gL=sigma*(1-phi**2)*(nu-2)/nu
+    cte=(n-1)*np.log((scipy.special.gamma((nu+1)/2)/(scipy.special.gamma(nu/2)*np.sqrt(nu*np.pi))))
+    stand=((y[1:n]-yhat)/np.sqrt(gL))**2
+    s1=np.sum(0.5*np.log(gL))
+    s2=np.sum(np.log(1 + (1/nu)*stand))
+    out=cte-s1-((nu+1)/2)*s2 -0.5*(np.log(2*np.pi) + y[0]**2)
+    out=-out
+    return out
+
+def IAR_t(y,sT,nu):
+    aux=1e10
+    value=1e10
+    br=0
+    for i in range(20):
+        phi=np.random.uniform(0,1,1)[0]
+        sigma=np.var(y)*np.random.uniform(0,1,1)[0]
+        nu=float(nu)
+        bnds = ((0, 0.9999), (0.0001, 2*np.var(y)))
+        out=minimize(IAR_phi_t,np.array([phi, sigma]),args=(y,sT,nu),bounds=bnds,method='L-BFGS-B')
+        value=out.fun
+        if aux > value:
+            par=out.x
+            aux=value
+            br=br+1
+        if aux <= value and br>5 and i>10:
+            break
+        #print br                                                                               
+    if aux == 1e10:
+        par=np.zeros(2)
+    return par[0],par[1],aux
