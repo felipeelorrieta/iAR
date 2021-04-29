@@ -10,6 +10,6 @@ setup(name='iar',
       packages=['iar'],
       keywords = ['irregulary observed time series','autoregressive'],
       install_requires=[
-        'numpy >=1.9.0',
+        'numpy','pandas','scipy'
     ],
       zip_safe=False)

@@ -24,7 +24,9 @@ Instalation
 Dependencies:
 
 ```
-Numpy
+numpy
+pandas
+scipy
 ```
 
 Install from PyPI using:

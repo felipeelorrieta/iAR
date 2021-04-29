@@ -1,11 +1,7 @@
-import pandas as pd
 import numpy as np
 import scipy
 from scipy.optimize import minimize_scalar
 from numpy import linalg as LA
-import matplotlib
-from scipy.stats import gaussian_kde
-from sklearn.neighbors import KernelDensity
 from numpy.linalg import inv
 
 def IAR_sample(phi,n,sT):

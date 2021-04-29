@@ -1,4 +1,6 @@
+README.md
 setup.py
+iar/BIARModel.py
 iar/CIARModel.py
 iar/IARModel.py
 iar/__init__.py

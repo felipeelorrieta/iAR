@@ -3,9 +3,7 @@ import numpy as np
 import scipy
 from scipy.optimize import minimize_scalar
 from numpy import linalg as LA
-import matplotlib
 from scipy.stats import gaussian_kde
-from sklearn.neighbors import KernelDensity
 from numpy.linalg import inv
 
 def gentime(n,lambda1=130,lambda2=6.5,w1=0.15,w2=0.85):
