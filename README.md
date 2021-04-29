@@ -45,7 +45,7 @@ Examples
 Authors
 ======================
 
--   Felipe Elorrieta (Millennium Institute of Astrophysics and Universidad de Santiago de Chile)
+-   Felipe Elorrieta (mailto:felipe.elorrieta@usach.cl) (Millennium Institute of Astrophysics and Universidad de Santiago de Chile)
 -   Cesar Ojeda (Universidad del Valle - Colombia)
 -   Susana Eyheramendy (Millennium Institute of Astrophysics and Universidad Adolfo Ibañez)
 -   Wilfredo Palma (Millennium Institute of Astrophysics)
@@ -53,12 +53,9 @@ Authors
 Acknowledgments
 ======================
 
-The authors acknowledge support from the ANID – Millennium Science Initiative Program – ICN12_009 awarded to the Millennium Institute of Astrophysics MAS 
+The authors acknowledge support from the ANID – Millennium Science Initiative Program – ICN12_009 awarded to the Millennium Institute of Astrophysics MAS ((www.astrofisicamas.cl)) 
 
 References
 ======================
 
----
-output: html_document
-bibliography: bibiAR.bib  
----
+{% bibliography %}
