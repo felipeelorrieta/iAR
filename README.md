@@ -7,8 +7,8 @@ Description
 Data sets, functions and scripts with examples to implement
 autoregressive models for irregularly observed time series. The models
 available in this package are the irregular autoregressive model
-(Eyheramendy et al.(2018) ), the complex irregular autoregressive model
-(Elorrieta et al.(2019) ) and the bivariate irregular autoregressive
+(Eyheramendy et al.(2018)), the complex irregular autoregressive model
+(Elorrieta et al.(2019)) and the bivariate irregular autoregressive
 model.
 
 Contents
@@ -53,9 +53,9 @@ Authors
 Acknowledgments
 ======================
 
+The authors acknowledge support from the ANID – Millennium Science Initiative Program – ICN12_009 awarded to the Millennium Institute of Astrophysics MAS 
+
 References
 ======================
 
-1. Eyheramendy S, Elorrieta F, Palma W (2018). “An irregular discrete time series model to identify residuals with autocorrelation in astronomical light curves.” Monthly Notices of the Royal
-Astronomical Society, 481(4), 4311–4322. ISSN 0035-8711, doi: 10.1093/mnras/sty2487, https:
-//academic.oup.com/mnras/article-pdf/481/4/4311/25906473/sty2487.pdf.
+{% bibiAR %}
