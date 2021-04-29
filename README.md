@@ -58,4 +58,7 @@ The authors acknowledge support from the ANID – Millennium Science Initiative 
 References
 ======================
 
-bibliography: bibliography.bib
+---
+output: html_document
+bibliography: bibiAR.bib  
+---
