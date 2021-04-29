@@ -7,8 +7,8 @@ Description
 Data sets, functions and scripts with examples to implement
 autoregressive models for irregularly observed time series. The models
 available in this package are the irregular autoregressive model
-(Eyheramendy et al.(2018)), the complex irregular autoregressive model
-(Elorrieta et al.(2019)) and the bivariate irregular autoregressive
+(Eyheramendy et al.(2018))(#1), the complex irregular autoregressive model
+(Elorrieta et al.(2019))(#2) and the bivariate irregular autoregressive
 model.
 
 Contents
@@ -58,7 +58,12 @@ The authors acknowledge support from the ANID – Millennium Science Initiative 
 References
 ======================
 
-<a id="1">[1]</a> 
-Dijkstra, E. W. (1968). 
-Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+<a id="1">[1]</a> Eyheramendy S, Elorrieta F, Palma W (2018). “An irregular discrete time series model to identify residuals with autocorrelation in astronomical light curves.” Monthly Notices of the Royal Astronomical Society, 481(4), 4311–4322. ISSN 0035-8711, doi: 10.1093/mnras/sty2487, https://academic.oup.com/mnras/article-pdf/481/4/4311/25906473/sty2487.pdf.
+
+<a id="2">[2]</a> Elorrieta, F, Eyheramendy, S, Palma, W (2019). “Discrete-time autoregressive model for unequally spaced time-series observations.” A\& A, 627, A120. doi: 10.1051/00046361/201935560, https://doi.org/10.1051/0004-6361/201935560.
+
+<a id="3">[3]</a> Jordán A, Espinoza N, Rabus M, Eyheramendy S, Sing DK, Désert J, Bakos GÁ, Fortney JJ, LópezMorales M, Maxted PFL, Triaud AHMJ, Szentgyorgyi A (2013). “A Ground-based Optical Transmission Spectrum of WASP-6b.” The Astrophysical Journal, 778, 184. doi: 10.1088/0004637X/
+778/2/184, 1310.6048, https://doi.org/10.1088/0004-637X/778/2/184.
+
+<a id="4">[4]</a> Lira P, Arévalo P, Uttley P, McHardy IMM, Videla L (2015). “Long-term monitoring of the archetype Seyfert galaxy MCG-6-30-15: X-ray, optical and near-IR variability of the corona, disc and torus.” Monthly Notices of the Royal Astronomical Society, 454(1), 368–379. ISSN 0035-8711, doi: 10.1093/mnras/stv1945, https://doi.org/10.1093/mnras/stv1945.
+
