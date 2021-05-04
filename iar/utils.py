@@ -5,6 +5,10 @@ from scipy.optimize import minimize_scalar
 from numpy import linalg as LA
 from scipy.stats import gaussian_kde
 from numpy.linalg import inv
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import matplotlib.backends.backend_pdf
 
 def gentime(n,lambda1=130,lambda2=6.5,w1=0.15,w2=0.85):
     aux1=np.random.exponential(scale=lambda1,size=n)
@@ -35,3 +39,21 @@ def harmonicfit(t,m,f):
     ols_fit=sm.ols('x ~ y1+y2+y3+y4+y5+y6+y7+y8', data=ws).fit()
     res = ols_fit.resid
     return res,t
+
+def foldlc(t,m,merr,f1,plot=True,nameP='folded.pdf'):
+    P=1/f1
+    fold=((t-t[0])%P)/P
+    fold1=fold+1
+    fold2=np.hstack((fold.tolist(),fold1.tolist()))
+    m2=np.hstack((m.tolist(),m.tolist()))
+    merr2=np.hstack((merr.tolist(),merr.tolist()))
+    data = pd.DataFrame({
+    't': fold2,
+    'm': m2,'merr': merr2})
+    if plot==True:
+       pdf = matplotlib.backends.backend_pdf.PdfPages(nameP) 
+       fig = plt.figure()
+       plt.plot(fold2,m2,"o-")
+       pdf.savefig(1)
+       pdf.close()
+    return data

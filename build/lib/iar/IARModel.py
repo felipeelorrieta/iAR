@@ -3,6 +3,11 @@ import scipy
 from scipy.optimize import minimize_scalar
 from numpy import linalg as LA
 from numpy.linalg import inv
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import matplotlib.backends.backend_pdf
+from sklearn.neighbors import KernelDensity
 
 def IAR_sample(phi,n,sT):
     Sigma=np.zeros(shape=(n,n))
@@ -190,3 +195,42 @@ def IAR_t(y,sT,nu):
     if aux == 1e10:
         par=np.zeros(2)
     return par[0],par[1],aux
+
+def kde_sklearn(x, x_grid, bandwidth=0.2, **kwargs):
+    """Kernel Density Estimation with Scikit-learn"""
+    kde_skl = KernelDensity(bandwidth=bandwidth, **kwargs)
+    kde_skl.fit(x[:, np.newaxis])
+    # score_samples() returns the log-likelihood of the samples
+    log_pdf = kde_skl.score_samples(x_grid[:, np.newaxis])
+    return np.exp(log_pdf)
+
+def IAR_Test(y,sT,f,phi,plot=True,xlim=np.arange(-1,0.1,1),bw=0.15,nameP='output.pdf'):
+    aux=np.arange(2.5,48,2.5)
+    aux=np.hstack((-aux,aux))
+    aux=np.sort(aux)
+    f0=f*(1+aux/100)
+    f0=np.sort(f0)
+    l1=len(f0)
+    bad=np.zeros(l1)
+    m=y
+    for j in range(l1):
+        res,sT=ajuste(sT,m,f0[j])
+        y=res/np.sqrt(np.var(res,ddof=1))
+        res3=IAR_loglik(y,sT)
+        bad[j]=res3
+    mubf=np.mean(np.log(bad))
+    sdbf=np.std(np.log(bad),ddof=1)
+    z0=np.log(phi)
+    pvalue=scipy.stats.norm.cdf(z0,mubf,sdbf)
+    norm=np.hstack((mubf,sdbf))
+    if plot==True:
+       pdf = matplotlib.backends.backend_pdf.PdfPages(nameP) 
+       fig = plt.figure()
+       xs = np.linspace(xlim[0],xlim[1],1000)
+       density = kde_sklearn(np.log(bad),xs,bandwidth=bw)
+       plt.plot(xs,density)
+       plt.axis([xlim[0],xlim[1], 0, np.max(density)+0.01,])                                                                                                                                            
+       plt.plot(z0, np.max(density)/100, 'o')
+       pdf.savefig(1)
+       pdf.close()
+    return phi,norm,z0,pvalue

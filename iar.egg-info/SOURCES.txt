@@ -4,7 +4,7 @@ iar/BIARModel.py
 iar/CIARModel.py
 iar/IARModel.py
 iar/__init__.py
-iar/data.py
+iar/data_iar.py
 iar/utils.py
 iar.egg-info/PKG-INFO
 iar.egg-info/SOURCES.txt
