@@ -12,4 +12,6 @@ setup(name='iar',
       install_requires=[
         'numpy','pandas','scipy'
     ],
+      include_package_date=True,
+      package_data={"":["data/*.csv"]},
       zip_safe=False)
