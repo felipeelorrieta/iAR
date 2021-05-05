@@ -44,6 +44,8 @@ python setup.py install --user
 Examples
 ======================
 
+IAR Model demo [here](https://github.com/felipeelorrieta/iAR/blob/master/examples/IAR_demo.ipynb)
+
 Authors
 ======================
 
