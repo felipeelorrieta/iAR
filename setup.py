@@ -10,8 +10,9 @@ setup(name='iar',
       packages=['iar'],
       keywords = ['irregulary observed time series','autoregressive'],
       install_requires=[
-        'numpy','pandas','scipy','matplotlib','sklearn'
+        'numpy','pandas','scipy','matplotlib','sklearn','statsmodels'
     ],
       include_package_date=True,
-      package_data={"":["data/*.csv"]},
+      package_dir={'iar':'iar'},
+      package_data={"":["../data/*.csv"]},
       zip_safe=False)

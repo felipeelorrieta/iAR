@@ -1,13 +1,13 @@
 import numpy as np
 import scipy
-from scipy.optimize import minimize_scalar
+from scipy.optimize import minimize,minimize_scalar
 from numpy import linalg as LA
 from numpy.linalg import inv
 import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.backends.backend_pdf
 from sklearn.neighbors import KernelDensity
+from .utils import harmonicfit
 
 def IAR_sample(phi,n,sT):
     Sigma=np.zeros(shape=(n,n))
@@ -214,9 +214,9 @@ def IAR_Test(y,sT,f,phi,plot=True,xlim=np.arange(-1,0.1,1),bw=0.15,nameP='output
     bad=np.zeros(l1)
     m=y
     for j in range(l1):
-        res,sT=ajuste(sT,m,f0[j])
+        res,sT=harmonicfit(sT,m,f0[j])
         y=res/np.sqrt(np.var(res,ddof=1))
-        res3=IAR_loglik(y,sT)
+        res3=IAR_loglik(y,sT,0)
         bad[j]=res3
     mubf=np.mean(np.log(bad))
     sdbf=np.std(np.log(bad),ddof=1)

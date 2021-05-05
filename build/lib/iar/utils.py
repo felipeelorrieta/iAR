@@ -6,9 +6,9 @@ from numpy import linalg as LA
 from scipy.stats import gaussian_kde
 from numpy.linalg import inv
 import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.backends.backend_pdf
+import statsmodels.formula.api as sm
 
 def gentime(n,lambda1=130,lambda2=6.5,w1=0.15,w2=0.85):
     aux1=np.random.exponential(scale=lambda1,size=n)
@@ -47,6 +47,10 @@ def foldlc(t,m,merr,f1,plot=True,nameP='folded.pdf'):
     fold2=np.hstack((fold.tolist(),fold1.tolist()))
     m2=np.hstack((m.tolist(),m.tolist()))
     merr2=np.hstack((merr.tolist(),merr.tolist()))
+    pos=np.argsort(fold2)
+    fold2=fold2[pos]
+    m2=m2[pos]
+    merr2=merr2[pos]
     data = pd.DataFrame({
     't': fold2,
     'm': m2,'merr': merr2})

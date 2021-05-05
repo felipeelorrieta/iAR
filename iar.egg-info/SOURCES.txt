@@ -12,3 +12,9 @@ iar.egg-info/dependency_links.txt
 iar.egg-info/not-zip-safe
 iar.egg-info/requires.txt
 iar.egg-info/top_level.txt
+iar/../data/Planets.csv
+iar/../data/agn.csv
+iar/../data/clcep.csv
+iar/../data/dmcep.csv
+iar/../data/dscut.csv
+iar/../data/eb.csv
