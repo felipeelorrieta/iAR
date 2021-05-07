@@ -90,6 +90,7 @@ def CIAR_phi_kalman(x,y,t,yerr,zero_mean=True,standarized=True,c=0.5):
             Sighat=np.dot(np.dot(F,Sighat),F.transpose()) + Qt - np.dot(np.dot(Theta,inv(Lambda)),Theta.transpose())
         yhat=np.dot(G,xhat)
         out=(sum_Lambda + sum_error)/n
+        out=np.array(out)[0][0]
         if np.isnan(sum_Lambda) == True:
             out=1e10
     else:

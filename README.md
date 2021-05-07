@@ -27,6 +27,9 @@ Dependencies:
 numpy
 pandas
 scipy
+matplotlib
+sklearn
+statsmodels
 ```
 
 Install from PyPI using:
