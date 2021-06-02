@@ -46,9 +46,9 @@ python setup.py install --user
 Examples
 ======================
 
-IAR Model demo [here](https://github.com/felipeelorrieta/iAR/blob/master/examples/IAR_demo.ipynb)
-CIAR Model demo [here](https://github.com/felipeelorrieta/iAR/blob/master/examples/CIAR_demo.ipynb)
-BIAR Model demo [here](https://github.com/felipeelorrieta/iAR/blob/master/examples/BIAR_demo.ipynb)
+-   IAR Model demo [here](https://github.com/felipeelorrieta/iAR/blob/master/examples/IAR_demo.ipynb)
+-   CIAR Model demo [here](https://github.com/felipeelorrieta/iAR/blob/master/examples/CIAR_demo.ipynb)
+-   BIAR Model demo [here](https://github.com/felipeelorrieta/iAR/blob/master/examples/BIAR_demo.ipynb)
 
 Authors
 ======================
