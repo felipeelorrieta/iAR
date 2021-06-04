@@ -216,7 +216,7 @@ def BIAR_LL(yest,x,y1,y2,t,yerr1,yerr2,zero_mean=True,standarized=True):
     return out
 
 #This function estimates the missing values of a BIAR process given specific values of phi.R and phi.I
-def BIAR_LL_Smoothing(x,y1,y2,t,yerr1,yerr2,zero_mean=True,standarized=True,seed=1234,niter=10,yini1=0,yini2=0,nsmooth=1):
+def BIAR_smoothing(x,y1,y2,t,yerr1,yerr2,zero_mean=True,standarized=True,seed=1234,niter=10,yini1=0,yini2=0,nsmooth=1):
     random.seed(seed)
     aux=1e10
     value=1e10
