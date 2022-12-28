@@ -6,7 +6,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 
 setup(name='iar',
-      version = '1.1.2',
+      version = '1.2.8',
       description='Irregularly Observed Autoregressive Models',
       url='https://github.com/felipeelorrieta/iAR',
       download_url="https://github.com/felipeelorrieta/iAR/archive/refs/tags/v1.0.0.tar.gz",
@@ -16,11 +16,10 @@ setup(name='iar',
       packages=['iar'],
       keywords = ['irregulary observed time series','autoregressive'],
       install_requires=[
-        'numpy','pandas','scipy','matplotlib','sklearn','statsmodels'
+        'numpy','pandas','scipy','matplotlib','sklearn','statsmodels','numba'
     ],
       long_description=long_description,
       long_description_content_type='text/markdown',
-      include_package_date=True,
       package_dir={'iar':'iar'},
       package_data={"":["../data/*.csv"]},
       zip_safe=False)
