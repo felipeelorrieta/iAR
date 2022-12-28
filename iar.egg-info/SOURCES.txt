@@ -16,6 +16,8 @@ iar.egg-info/top_level.txt
 iar/../data/Planets.csv
 iar/../data/agn.csv
 iar/../data/clcep.csv
+iar/../data/cvnovag.csv
+iar/../data/cvnovar.csv
 iar/../data/dmcep.csv
 iar/../data/dscut.csv
 iar/../data/eb.csv
