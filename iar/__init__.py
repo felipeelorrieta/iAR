@@ -3,10 +3,10 @@ Data sets, functions and scripts with examples to implement autoregressive model
 https://github.com/felipeelorrieta/iar
 """
 
-__version__ = '1.0.0'
+__version__ = '1.2.8'
 
-from .data_iar import clcep,eb,dmcep,dscut,agn,Planets
-from .utils import gentime,harmonicfit,foldlc
-from .IARModel import IAR_sample,IAR_phi_loglik,IAR_loglik,IAR_phi_kalman,IAR_kalman,IARg_sample,IAR_phi_gamma,IAR_gamma,IARt_sample,IAR_phi_t,IAR_t,kde_sklearn,IAR_Test
-from .CIARModel import CIAR_sample,CIAR_phi_kalman,CIAR_kalman,CIAR_fit,CIAR_forecast
-from .BIARModel import BIAR_sample,BIAR_phi_kalman,BIAR_kalman,BIAR_fit,BIAR_LL,BIAR_smoothing
+from .data_iar import clcep,eb,dmcep,dscut,agn,Planets,cvnovag,cvnovar
+from .utils import gentime,harmonicfit,foldlc,pairingits
+from .IARModel import IARsample,IARphiloglik,IARloglik,IARphikalman,IARkalman,IARfit,IARforecast,IARgsample,IARphigamma,IARgamma,IARtsample,IARphit,IARt,kde_sklearn,IARtest,IARpermutation,IARinterpolation,IARphikalman2,IARginterpolation,IARphigamma2
+from .CIARModel import CIARsample,CIARphikalman,CIARkalman,CIARfit,CIARforecast,CIARinterpolation,CIARphikalman2
+from .BIARModel import BIARsample,BIARphikalman,BIARkalman,BIARfit,BIARforecast,BIARinterpolation,BIARLL

@@ -17,3 +17,9 @@ def Planets():
 
 def agn():
     return pd.read_csv("../data/agn.csv", encoding='latin-1',header=0,sep=",")
+
+def cvnovag():
+    return pd.read_csv("../data/cvnovag.csv", encoding='latin-1',header=0,sep=",")
+
+def cvnovar():
+    return pd.read_csv("../data/cvnovar.csv", encoding='latin-1',header=0,sep=",")
